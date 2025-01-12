@@ -130,11 +130,6 @@ This Python script monitors USB drives connected to your computer, copies their 
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 ## Contributing
 
