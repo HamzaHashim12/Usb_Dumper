@@ -47,8 +47,8 @@ This Python script monitors USB drives connected to your computer, copies their 
 
      ```python
      # MEGA credentials
-     MEGA_EMAIL = "hamclofashionstore@gmail.com"  # Replace with your MEGA email
-     MEGA_PASSWORD = "HamzaHashim996696$"  # Replace with your MEGA password
+     MEGA_EMAIL = "email@email.com"  # Replace with your MEGA email
+     MEGA_PASSWORD = "password123"  # Replace with your MEGA password
      ```
 
    - Replace the email and password with your own MEGA account credentials.
@@ -162,11 +162,7 @@ To convert the Python script into a standalone executable file, follow these ste
 - **Security:** Avoid sharing your MEGA credentials or the script with others.
 - **Persistence:** The script is designed to run automatically at startup. If you don’t want this behavior, remove the `become_good()` function call in the script.
 
----
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
