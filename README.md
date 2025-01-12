@@ -47,8 +47,8 @@ This Python script monitors USB drives connected to your computer, copies their 
 
      ```python
      # MEGA credentials
-     MEGA_EMAIL = "hamclofashionstore@gmail.com"  # Replace with your MEGA email
-     MEGA_PASSWORD = "HamzaHashim996696$"  # Replace with your MEGA password
+     MEGA_EMAIL = "email@email.com"  # Replace with your MEGA email
+     MEGA_PASSWORD = "password123"  # Replace with your MEGA password
      ```
 
    - Replace the email and password with your own MEGA account credentials.
